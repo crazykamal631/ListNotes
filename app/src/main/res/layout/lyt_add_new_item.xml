@@ -1,77 +1,88 @@
 <?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="addNewItemViewModel"
+            type="com.example.listnotes.addNewItem.AddNewItemViewModel" />
 
 
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_margin="@dimen/dp_5"
-    tools:context=".MainActivity">
+    </data>
 
-    <TextView
-        android:id="@+id/title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="@dimen/dp_5"
-        android:text="@string/label_add_new_item"
-        android:textSize="@dimen/sp_25" />
-
-    <Button
-        android:layout_alignParentEnd="true"
-        android:text="@string/btn_label_save"
-        android:id="@+id/save_content"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-
-    <ScrollView
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/save_content"
-        tools:context=".MainActivity">
+        android:layout_margin="@dimen/dp_5"
+        tools:context=".dashboard.MainActivity">
 
-        <RelativeLayout
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/dp_5"
+            android:text="@string/label_add_new_item"
+            android:textSize="@dimen/sp_25" />
+
+
+        <Button
+            android:id="@+id/save_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:onClick="@{(view) -> addNewItemViewModel.addItem(valueItemTitle.getText().toString(), valueItemContent.getText().toString())}"
+            android:text="@string/btn_label_save" />
+
+        <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            tools:context=".MainActivity">
+            android:layout_below="@+id/save_content"
+            tools:context=".dashboard.MainActivity">
 
-            <TextView
-                android:id="@+id/label_item_title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-
-                android:layout_marginTop="@dimen/dp_5"
-                android:text="@string/label_item_title"
-                android:textSize="@dimen/sp_20" />
-
-            <EditText
-                android:id="@+id/value_item_title"
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/label_item_title"
-                android:layout_marginTop="@dimen/dp_5"
-                android:maxLength="100"
-                android:textSize="@dimen/sp_20" />
+                android:layout_height="match_parent"
+                tools:context=".dashboard.MainActivity">
+
+                <TextView
+                    android:id="@+id/label_item_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginTop="@dimen/dp_5"
+                    android:text="@string/label_item_title"
+                    android:textSize="@dimen/sp_20" />
+
+                <EditText
+                    android:id="@+id/value_item_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/label_item_title"
+                    android:layout_marginTop="@dimen/dp_5"
+                    android:maxLength="100"
+                    android:textSize="@dimen/sp_20" />
 
 
-            <TextView
-                android:id="@+id/label_item_content"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/value_item_title"
-                android:layout_marginTop="@dimen/dp_5"
-                android:text="@string/label_item_content"
-                android:textSize="@dimen/sp_20" />
+                <TextView
+                    android:id="@+id/label_item_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/value_item_title"
+                    android:layout_marginTop="@dimen/dp_5"
+                    android:text="@string/label_item_content"
+                    android:textSize="@dimen/sp_20" />
 
-            <EditText
-                android:id="@+id/value_item_content"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/label_item_content"
-                android:layout_marginTop="@dimen/dp_5"
-                android:textSize="@dimen/sp_20" />
-        </RelativeLayout>
-    </ScrollView>
-</RelativeLayout>
+                <EditText
+                    android:id="@+id/value_item_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/label_item_content"
+                    android:layout_marginTop="@dimen/dp_5"
+                    android:textSize="@dimen/sp_20" />
+            </RelativeLayout>
+        </ScrollView>
+    </RelativeLayout>
 
-
+</layout>

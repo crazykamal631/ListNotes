@@ -1,71 +1,102 @@
 <?xml version="1.0" encoding="utf-8"?>
 
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
 
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_margin="@dimen/dp_5"
-    tools:context=".MainActivity">
+    <data>
 
-    <TextView
-        android:id="@+id/title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="@dimen/dp_5"
-        android:text="@string/label_item_detail"
-        android:textSize="@dimen/sp_25" />
+        <variable
+            name="item"
+            type="com.example.listnotes.datasource.Item" />
 
 
+    </data>
 
-    <ScrollView
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/title"
-        tools:context=".MainActivity">
+        android:layout_margin="@dimen/dp_5"
+        tools:context=".dashboard.MainActivity">
 
-        <RelativeLayout
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/dp_5"
+            android:text="@string/label_item_detail"
+            android:textSize="@dimen/sp_25" />
+
+
+        <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            tools:context=".MainActivity">
+            android:layout_below="@+id/title"
+            tools:context=".dashboard.MainActivity">
 
-            <TextView
-                android:id="@+id/label_item_title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-
-                android:layout_marginTop="@dimen/dp_5"
-                android:text="@string/label_item_title"
-                android:textSize="@dimen/sp_20" />
-
-            <TextView
-                android:id="@+id/value_item_title"
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/label_item_title"
-                android:layout_marginTop="@dimen/dp_5"
-                android:textSize="@dimen/sp_20" />
+                android:layout_height="match_parent"
+                tools:context=".dashboard.MainActivity">
+
+                <TextView
+                    android:id="@+id/label_item_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginTop="@dimen/dp_5"
+                    android:text="@string/label_item_title"
+                    android:textSize="@dimen/sp_20" />
+
+                <TextView
+                    android:text="@{item.title}"
+                    android:id="@+id/value_item_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/label_item_title"
+                    android:layout_marginTop="@dimen/dp_5"
+                    android:textSize="@dimen/sp_20" />
 
 
-            <TextView
-                android:id="@+id/label_item_content"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/value_item_title"
-                android:layout_marginTop="@dimen/dp_5"
-                android:text="@string/label_item_content"
-                android:textSize="@dimen/sp_20" />
+                <TextView
+                    android:id="@+id/label_item_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/value_item_title"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:text="@string/label_item_content"
+                    android:textSize="@dimen/sp_20" />
 
-            <TextView
-                android:id="@+id/value_item_content"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/label_item_content"
-                android:layout_marginTop="@dimen/dp_5"
-                android:textSize="@dimen/sp_20" />
-        </RelativeLayout>
-    </ScrollView>
-</RelativeLayout>
+                <TextView
+                    android:text="@{item.content}"
+                    android:id="@+id/value_item_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/label_item_content"
+                    android:layout_marginTop="@dimen/dp_5"
+                    android:textSize="@dimen/sp_20" />
 
+
+
+                <TextView
+                    android:id="@+id/label_item_timestamp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/value_item_content"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:text="@string/label_item_time_stamp"
+                    android:textSize="@dimen/sp_20" />
+
+                <TextView
+                    android:text="@{item.time}"
+                    android:id="@+id/time_stamp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/label_item_timestamp"
+                    android:layout_marginTop="@dimen/dp_5"
+                    android:textSize="@dimen/sp_20" />
+            </RelativeLayout>
+        </ScrollView>
+    </RelativeLayout>
+</layout>
 

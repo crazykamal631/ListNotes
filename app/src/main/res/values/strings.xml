@@ -6,4 +6,5 @@
     <string name="label_item_content">Content</string>
     <string name="btn_label_save">Save</string>
     <string name="label_item_detail">Detail</string>
+    <string name="label_item_time_stamp">Item Created On</string>
 </resources>
