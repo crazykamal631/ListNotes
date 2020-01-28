@@ -47,55 +47,74 @@
 
                     android:layout_marginTop="@dimen/dp_5"
                     android:text="@string/label_item_title"
-                    android:textSize="@dimen/sp_20" />
+                    android:textSize="@dimen/sp_15" />
 
                 <TextView
+                    android:textColor="@android:color/black"
                     android:text="@{item.title}"
                     android:id="@+id/value_item_title"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/label_item_title"
                     android:layout_marginTop="@dimen/dp_5"
-                    android:textSize="@dimen/sp_20" />
+                    android:textSize="@dimen/sp_15" />
 
+
+                <View
+                    android:id="@+id/separator"
+                    android:layout_marginTop="@dimen/dp_5"
+                    android:layout_below="@+id/value_item_title"
+                    android:background="@android:color/black"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"/>
 
                 <TextView
                     android:id="@+id/label_item_content"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/value_item_title"
+                    android:layout_below="@+id/separator"
                     android:layout_marginTop="@dimen/dp_10"
                     android:text="@string/label_item_content"
-                    android:textSize="@dimen/sp_20" />
+                    android:textSize="@dimen/sp_15" />
 
                 <TextView
+                    android:textColor="@android:color/black"
                     android:text="@{item.content}"
                     android:id="@+id/value_item_content"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/label_item_content"
                     android:layout_marginTop="@dimen/dp_5"
-                    android:textSize="@dimen/sp_20" />
+                    android:textSize="@dimen/sp_15" />
 
 
+
+                <View
+                    android:id="@+id/separator_two"
+                    android:layout_marginTop="@dimen/dp_5"
+                    android:layout_below="@+id/value_item_content"
+                    android:background="@android:color/black"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"/>
 
                 <TextView
                     android:id="@+id/label_item_timestamp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/value_item_content"
+                    android:layout_below="@+id/separator_two"
                     android:layout_marginTop="@dimen/dp_10"
                     android:text="@string/label_item_time_stamp"
-                    android:textSize="@dimen/sp_20" />
+                    android:textSize="@dimen/sp_15" />
 
                 <TextView
+                    android:textColor="@android:color/black"
                     android:text="@{item.time}"
                     android:id="@+id/time_stamp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/label_item_timestamp"
                     android:layout_marginTop="@dimen/dp_5"
-                    android:textSize="@dimen/sp_20" />
+                    android:textSize="@dimen/sp_15" />
             </RelativeLayout>
         </ScrollView>
     </RelativeLayout>

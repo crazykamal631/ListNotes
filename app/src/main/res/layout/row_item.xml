@@ -3,17 +3,19 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_margin="@dimen/dp_5"
-    tools:context=".dashboard.MainActivity">
+    android:layout_height="wrap_content"
+    android:padding="@dimen/dp_5"
+    tools:context=".dashboard.MainActivity"
+    android:background="@color/color_row_item"
+    >
 
     <TextView
+        android:textColor="@android:color/black"
         android:id="@+id/title"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/dp_5"
         android:text="@string/label_item_detail"
-        android:textSize="@dimen/sp_25" />
+        android:textSize="@dimen/sp_15" />
 
 </RelativeLayout>
 
