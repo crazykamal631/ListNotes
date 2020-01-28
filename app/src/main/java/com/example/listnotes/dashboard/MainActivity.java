@@ -6,6 +6,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ListView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -27,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
     private ListView mListView;
     private List<Item> mItems;
     private CustomAdapter mCustomAdapter;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -112,6 +114,10 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent();
         intent.setClass(getApplicationContext(), ActAddNewItem.class);
         startActivity(intent);
+    }
+
+    public void handleOnClick(View view){
+        launchAddNewItem();
     }
 
 }
